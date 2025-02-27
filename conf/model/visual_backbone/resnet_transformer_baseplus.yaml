@@ -1,5 +1,5 @@
-idim: 768
-adim: 1024
+idim: 512
+adim: 768
 aheads: 12
 eunits: 3072
 elayers: 12

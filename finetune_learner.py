@@ -92,7 +92,10 @@ class Learner(LightningModule):
 
     def calculate_wer(self, data, padding_mask, labels):
         labels = labels.squeeze(1)
-        data = data.squeeze(1)
+        if self.cfg.data.modality == "video":
+            data = data.squeeze(1)
+        else:  # self.cfg.data.modality == "audio":
+            data = data.transpose(1, 2)
         padding_mask = padding_mask
         for idx, (vid, label, mask) in enumerate(zip(data, labels, padding_mask)):
             x = vid[mask].unsqueeze(0)
