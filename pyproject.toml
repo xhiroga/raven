@@ -31,4 +31,4 @@ explicit = true
 torch = { index = "pytorch-cu128" }
 torchvision = { index = "pytorch-cu128" }
 torchaudio = { index = "pytorch-cu128" }
-fairseq = { git = "https://github.com/pytorch/fairseq.git", rev = "v0.10.2" }
+fairseq = { git = "https://github.com/facebookresearch/fairseq.git", rev = "v0.10.2" }
