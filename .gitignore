@@ -1,4 +1,7 @@
 ckpts
+data_paths/landmarks
+data_paths/targets
+data_paths/videos
 wandb
 
 # Byte-compiled / optimized / DLL files
