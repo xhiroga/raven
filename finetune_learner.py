@@ -116,6 +116,12 @@ class Learner(LightningModule):
 
             label = label[label != self.ignore_id]
             groundtruth = ids_to_str(label, self.token_list)
+            
+            # Print inference result
+            print(f"\n=== Inference Result (Sample {idx+1}) ===")
+            print(f"Predicted: {transcription}")
+            print(f"Ground Truth: {groundtruth}")
+            print("=" * 40)
 
             groundtruth = groundtruth.replace("▁", " ").strip()
             transcription = transcription.replace("▁", " ").strip()
@@ -127,7 +133,7 @@ class Learner(LightningModule):
         padding_mask = make_non_pad_mask(lengths).to(lengths.device)
         self.calculate_wer(data["data"], padding_mask, data["label"])
 
-    def test_epoch_end(self, outputs):
+    def on_test_epoch_end(self):
         wer = self.wer.compute()
         print(wer)
         self.log("wer", wer)
