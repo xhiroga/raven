@@ -5,7 +5,10 @@
       "Bash(HYDRA_FULL_ERROR=1 uv run python test.py --cfg job)",
       "WebSearch",
       "Bash(make test:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(ffprobe:*)",
+      "Bash(ffmpeg:*)",
+      "Bash(make:*)"
     ],
     "deny": [],
     "ask": []
